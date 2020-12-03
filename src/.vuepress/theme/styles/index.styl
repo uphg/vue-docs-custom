@@ -257,8 +257,6 @@ th, td
   a
     color #333333
     transition color 0.3s
-    &:hover
-      color $accentColor
   svg
     width 1em
     height 1em
@@ -267,5 +265,7 @@ th, td
     overflow hidden
     transition fill 0.3s
   .prev:hover, .next:hover
+    a
+      color $accentColor
     svg
       fill $accentColor

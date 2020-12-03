@@ -20,11 +20,19 @@
       @click.native="$emit('toggle')"
     >
       <span>{{ item.title }}</span>
-      <span
+      <!-- <span
         v-if="collapsable"
         class="arrow"
         :class="open ? 'down' : 'right'"
-      />
+      /> -->
+      <svg
+        v-if="collapsable"
+        class="icon arrow"
+        :class="{down: open}"
+        aria-hidden="true"
+      >
+        <use xlink:href="#icon-arrow-right"></use>
+      </svg>
     </RouterLink>
 
     <p
@@ -34,11 +42,19 @@
       @click="$emit('toggle')"
     >
       <span>{{ item.title }}</span>
-      <span
+      <!-- <span
         v-if="collapsable"
         class="arrow"
         :class="open ? 'down' : 'right'"
-      />
+      /> -->
+      <svg
+        v-if="collapsable"
+        class="icon arrow"
+        :class="{down: open}"
+        aria-hidden="true"
+      >
+        <use xlink:href="#icon-arrow-right"></use>
+      </svg>
     </p>
 
     <DropdownTransition>
@@ -114,17 +130,27 @@ export default {
   font-size 1.1em
   font-weight bold
   // text-transform uppercase
-  padding 0.35rem 1.5rem 0.35rem 1.25rem
+  padding 0.35rem 1.25rem 0.35rem 1.25rem
   width 100%
   box-sizing border-box
   margin 0
   border-left 0.25rem solid transparent
+  display flex
+  justify-content space-between
+  align-items center
   &.open, &:hover
     color inherit
   .arrow
-    position relative
-    top -0.12em
-    left 0.5em
+    // position relative
+    // top -0.12em
+    // left 0.5em
+    fill #b2bac2
+    transition transform 0.1s ease-out;
+    width 12px
+    height 12px
+    &.down
+      border none
+      transform rotate(90deg)
   &.clickable
     &.active
       font-weight 600

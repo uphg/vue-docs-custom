@@ -1,13 +1,15 @@
-const nav = require( "./nav.js" )
-const sidebar = require( "./sidebar.js" )
+const nav = require("./nav.js")
+const sidebar = require("./sidebar.js")
 
 module.exports = {
+  base: '/vue-docs-custom/',
   title: 'Vue.js',
   description: 'Vue.js - The Progressive JavaScript Framework',
   head: [
-    ['link',{ href:'https://fonts.googleapis.com/css?family=Inter:300,400,500,600|Open+Sans:400,600;display=swap',rel: 'stylesheet' }],
+    ['link', { href: 'https://fonts.googleapis.com/css?family=Inter:300,400,500,600|Open+Sans:400,600;display=swap', rel: 'stylesheet' }],
     /* 本地备份字体 */
     // ['link', {rel: 'stylesheet', href: './font/index.css'}]
+    ['script', { src: '/icon/svg.js' }]
   ],
   themeConfig: {
     logo: '/logo.png',
@@ -17,9 +19,9 @@ module.exports = {
     editLinkText: 'Edit this on GitHub!',
     lastUpdated: 'Last updated',
     docsDir: 'src',
-    sidebarDepth: 2,
+    sidebarDepth: 0,
     sidebar: sidebar,
-    smoothScroll: false,
+    smoothScroll: true,
     /* algolia: {
       indexName: 'vuejs-v3',
       appId: 'BH4D9OD16A',
@@ -27,6 +29,19 @@ module.exports = {
     } */
   },
   plugins: [
+    ['vuepress-plugin-table-of-contents'],
+    ['@vuepress/back-to-top'],
+    [
+      'vuepress-plugin-zooming',
+      {
+        selector: '.page img',
+        delay: 1000,
+        options: {
+          bgColor: 'black',
+          zIndex: 10000,
+        },
+      },
+    ],
     [
       '@vuepress/pwa',
       {
