@@ -17,7 +17,7 @@ module.exports = {
     // repo: 'vuejs/docs-next',
     // editLinks: false,
     // editLinkText: 'Edit this on GitHub!',
-    lastUpdated: '最后更新时间',
+    lastUpdated: '上次更新',
     docsDir: 'src',
     sidebarDepth: 0,
     sidebar: sidebar,
