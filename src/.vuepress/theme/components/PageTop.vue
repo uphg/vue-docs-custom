@@ -66,6 +66,7 @@ export default {
 }
 </script>
 <style lang="stylus">
+$defaultLinkColor = #333333
 .re-page-top
     padding 5.5rem 40px 20px
     max-width 740px
@@ -103,7 +104,7 @@ export default {
         margin 0
         line-height 2
     a
-        color #005cc5
+        color $defaultLinkColor
         transition color 0.2s
         border-bottom 1px solid transparent
         &:hover
@@ -118,6 +119,8 @@ export default {
     margin-right 3px
     display flex
     align-items center
+    svg
+      fill currentColor
 
 .arrow-right
     margin-right 5px

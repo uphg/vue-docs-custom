@@ -25,13 +25,16 @@
 <script>
 import isNil from 'lodash/isNil'
 import { endingSlashRE, outboundRE } from '../util'
-
+import dayjs from 'dayjs'
+// dayjs.extend(require('dayjs/plugin/customParseFormat'))
 export default {
   name: 'PageEdit',
 
   computed: {
     lastUpdated () {
-      return this.$page.lastUpdated
+      const value = this.$page.lastUpdated
+      const time = dayjs(value).format('YYYY-MM-DD HH:mm')
+      return time
     },
 
     lastUpdatedText () {
