@@ -42,6 +42,11 @@ module.exports = {
         },
       },
     ],
+    ['@vuepress/active-header-links',
+      {
+        sidebarLinkSelector: '.page-catalog a'
+      }
+    ],
     [
       '@vuepress/pwa',
       {
