@@ -68,7 +68,7 @@ export default {
 <style lang="stylus">
 $defaultLinkColor = #333333
 .re-page-top
-    padding 5.5rem 40px 20px
+    padding 5.5rem 40px 1.6rem
     max-width 740px
     margin 0 auto -3rem
     h1.title
@@ -132,9 +132,9 @@ $defaultLinkColor = #333333
 
 @media (max-width: $MQNarrow)
     .re-page-top
-        padding 5.5rem 32px 0
+        padding 5.5rem 32px 1.6rem
 // wide mobile
 @media (max-width: $MQMobile)
     .re-page-top
-        padding 5.5rem 24px 0
+        padding 5.5rem 24px 1.6rem
 </style>
